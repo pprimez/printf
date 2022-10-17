@@ -98,17 +98,17 @@ int write_num(int ind, char buffer[],
 	int i, padd_start = 1;
 
 	if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0' && width == 0)
-OBOBOB		return (0); /* printf(".0d", 0)  no char is printed */
+		return (0); /* printf(".0d", 0)  no char is printed */
 	if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
-OBOBOB		buffer[ind] = padd = ' '; /* width is displayed with padding ' ' */
+		buffer[ind] = padd = ' '; /* width is displayed with padding ' ' */
 	if (prec > 0 && prec < length)
-OBOBOB		padd = ' ';
+		padd = ' ';
 	while (prec > length)
 		buffer[--ind] = '0', length++;
-OBOBOB	if (extra_c != 0)
+	if (extra_c != 0)
 		length++;
 	if (width > length)
-OBOBOB	{
+	{
 		for (i = 1; i < width - length + 1; i++)
 			buffer[i] = padd;
 		buffer[i] = '\0';
